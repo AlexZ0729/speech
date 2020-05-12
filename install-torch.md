@@ -38,13 +38,9 @@ Change to this repo directory and update the path variables
 source setup.sh
 ```
 
-Build warp-ctc   
+Fresh build warp-ctc (so cmake finds torch)
 ```
 cd libs/warp-ctc
-```
-
-Fresh build (so cmake finds torch)
-```
 rm -rf build && mkdir build && cd build
 cmake ..
 make
