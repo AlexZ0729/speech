@@ -22,7 +22,7 @@ cd /share/data/speech/Data/ttic31110/course_project/speech
 source setup.sh
 ```
 
-Build warp-ctc
+Build warp-ctc   
 `cd libs/warp-ctc`
 
 Fresh build (so cmake finds torch)
