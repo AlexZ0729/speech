@@ -15,7 +15,7 @@ In these experiments we use three subsets following the Kaldi WSJ recipe:
 #### If using the TTIC slurm cluster...
 You can find the **preprocessed** WSJ data partitions and the corresponding jsons stored at 
 ```
-/share/data/lang/users/ttic_31110/datasets/wsj
+/share/data/lang/users/ttic_31110/Datasets/wsj
 ```
 
 #### Otherwise, once downloaded, prepare the data
