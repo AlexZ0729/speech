@@ -4,7 +4,8 @@
 
     "data" : {
         "train_set" : "/examples/librispeech/data/train-clean-100.json",
-        "dev_set" : "/examples/librispeech/data/dev-clean.json"
+        "dev_set" : "/examples/librispeech/data/dev-clean.json",
+        "start_and_end" : false
     },
 
     "optimizer" : {
