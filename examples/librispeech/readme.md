@@ -1,12 +1,12 @@
 ## Setup
 
-### If using the TTIC slurm cluster...
+#### If using the TTIC slurm cluster...
 You can find the **preprocessed** LibriSpeech clean data partitions and the corresponding jsons stored at 
 ```
 /share/data/lang/users/ttic_31110/datasets/librispeech
 ```
 
-### Otherwise, download and prepare the data
+#### Otherwise, download and prepare the data
 
 ```
 python download.py <path-to-data-folder>
