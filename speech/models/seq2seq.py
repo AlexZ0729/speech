@@ -59,7 +59,7 @@ class Seq2Seq(model.Model):
         out = out.view((-1, out_dim))
         y = y[:,1:].contiguous().view(-1)
         loss = nn.functional.cross_entropy(out, y,
-                size_average=False)
+                reduction='sum')
         loss = loss / batch_size
         return loss
 
@@ -87,7 +87,7 @@ class Seq2Seq(model.Model):
 
         hx = torch.zeros((x.shape[0], x.shape[2]), requires_grad=False)
         if self.is_cuda:
-            hx.cuda()
+            hx = hx.cuda()
         ax = None; sx = None;
         for t in range(y.size()[1] - 1):
             sample = (out and self.scheduled_sampling)
@@ -119,7 +119,7 @@ class Seq2Seq(model.Model):
         if state is None:
             hx = torch.zeros((x.shape[0], x.shape[2]), requires_grad=False)
             if self.is_cuda:
-                hx.cuda()
+                hx = hx.cuda()
             ax = None; sx = None;
         else:
             hx, ax, sx = state
@@ -152,7 +152,7 @@ class Seq2Seq(model.Model):
             y = torch.max(out, dim=1)[1]
             y = y.unsqueeze(dim=1)
             argmaxs.append(y)
-            if torch.sum(y.data == end_tok) == y.numel():
+            if torch.sum(y.data.cpu() == end_tok) == y.numel():
                 break
 
         probs = torch.cat(probs)
@@ -232,8 +232,8 @@ class Seq2Seq(model.Model):
         inputs = torch.from_numpy(inputs)
         labels = torch.from_numpy(labels)
         if self.volatile:
-            inputs.volatile = True
-            labels.volatile = True
+            inputs.requires_grad = True
+            labels.requires_grad = True
         return inputs, labels
 
 def end_pad_concat(labels):
