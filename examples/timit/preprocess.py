@@ -21,7 +21,7 @@ TEST_SPEAKERS = [ # Core test set from timit/readme.doc
     'mgrt0', 'mnjm0', 'fdhc0', 'mjln0', 'mpam0', 'fmld0']
 
 def load_phone_map():
-    with open("phones.60-48-39.map", 'r') as fid:
+    with open("examples/timit/phones.60-48-39.map", 'r') as fid:
         lines = (l.strip().split() for l in fid)
         lines = [l for l in lines if len(l) == 3]
     m60_48 = {l[0] : l[1] for l in lines}
@@ -53,7 +53,7 @@ def split_by_speaker(data, dev_speakers=50):
     speaker_dict = collections.defaultdict(list)
     for k, v in data.items():
         speaker_dict[speaker_id(k)].append((k, v))
-    speakers = speaker_dict.keys()
+    speakers = list(speaker_dict.keys())
     for t in TEST_SPEAKERS:
         speakers.remove(t)
     random.shuffle(speakers)
@@ -87,20 +87,21 @@ if __name__ == "__main__":
         help="Path where the dataset is saved.")
     args = parser.parse_args()
 
-    path = os.path.join(args.output_directory, "timit")
-    path = os.path.abspath(path)
+    # path = os.path.join(args.output_directory, "timit")
+    path = os.path.abspath(args.output_directory)
 
     print("Converting files from NIST to standard wave format...")
     convert_to_wav(path)
-
+    
+    save_path = "examples/timit/data/timit"
     print("Preprocessing train")
     train = load_transcripts(os.path.join(path, "train"))
-    build_json(train, path, "train")
+    build_json(train, save_path, "train")
 
     print("Preprocessing dev")
     transcripts = load_transcripts(os.path.join(path, "test"))
     dev, test = split_by_speaker(transcripts)
-    build_json(dev, path, "dev")
+    build_json(dev, save_path, "dev")
 
     print("Preprocessing test")
-    build_json(test, path, "test")
+    build_json(test, save_path, "test")
