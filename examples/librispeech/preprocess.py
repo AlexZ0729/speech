@@ -15,7 +15,7 @@ from speech.utils import wave
 SETS = {
     "train" : ["train-clean-100"],
     "dev" : ["dev-clean"],
-    "test" : []
+    "test" : ["test-clean"]
     }
 
 def load_transcripts(path):
