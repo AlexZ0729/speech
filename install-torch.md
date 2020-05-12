@@ -1,3 +1,4 @@
+
 Clone torch repo  
 `git clone https://github.com/torch/distro.git ~/torch --recursive`
 
@@ -19,7 +20,7 @@ Install
 Activate torch env vars and warp-ctc vars   
 `. ~/torch/install/bin/torch-activate`
 
-Change to the repo directory  
+Change to this repo directory and update the path variables 
 `source setup.sh`
 
 Build warp-ctc   
@@ -32,5 +33,6 @@ cmake ..
 make
 ```
 
-# test
+Run tests for CTC
+./test_cpu
 ./test_gpu
