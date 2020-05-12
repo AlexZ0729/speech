@@ -1,4 +1,7 @@
-
+Activate the python3 environment
+```
+conda activate project_31110
+```
 Clone torch repo  
 ```
 git clone https://github.com/torch/distro.git ~/torch --recursive
