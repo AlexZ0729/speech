@@ -234,9 +234,9 @@ class Seq2Seq(model.Model):
         labels = end_pad_concat(labels)
         inputs = torch.from_numpy(inputs)
         labels = torch.from_numpy(labels)
-        if self.volatile:
-            inputs.requires_grad = True
-            labels.requires_grad = True
+        # if self.volatile:
+        #    inputs.volatile = True
+        #    labels.volatile = True
         return inputs, labels
 
 def end_pad_concat(labels):
