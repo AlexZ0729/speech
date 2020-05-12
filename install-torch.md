@@ -47,7 +47,7 @@ cmake ..
 make
 ```
 
-Run tests for CTC  
+Run tests for the CTC package
 ```
 ./test_cpu
 ./test_gpu
