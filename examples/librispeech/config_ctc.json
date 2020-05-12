@@ -1,4 +1,4 @@
-pl{
+{
     "seed" : 2017,
     "save_path" : "/examples/librispeech/models/ctc_best",
 
