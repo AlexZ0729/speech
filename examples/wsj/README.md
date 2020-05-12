@@ -49,5 +49,5 @@ python eval.py <path_to_model> examples/wsj/data/eval_92.json --save predictions
 These are the character error rates for the test results using the default config.json files.
 Note this is without an external LM and with a beam size of 1. 
 
-- Seq2Seq: 12.5 %
-- CTC: 12.6 %
+- Seq2Seq: 28 %
+- CTC: 23.6 %
