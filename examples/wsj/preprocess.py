@@ -11,15 +11,15 @@ import subprocess
 import tqdm
 
 from speech.utils import wave
-
+# AP: DATASETS and DOT_PATHS edited to adjust for file paths
 DATASETS = {
-    "train_si284" : ["wsj1/doc/indices/si_tr_s.ndx",
-                    "wsj0/doc/indices/train/tr_s_wv1.ndx"],
-    "eval_92" : ["wsj0/doc/indices/test/nvp/si_et_20.ndx"],
-    "dev_93" : ["wsj1/doc/indices/h1_p0.ndx"]
+    "train_si284" : ["wsj1/wsj1/doc/indices/si_tr_s.ndx",
+                    "wsj0/wsj0/doc/indices/train/tr_s_wv1.ndx"],
+    "eval_92" : ["wsj0/wsj0/doc/indices/test/nvp/si_et_20.ndx"],
+    "dev_93" : ["wsj1/wsj1/doc/indices/h1_p0.ndx"]
 }
 DOT_PATHS = ["wsj0/transcrp/dots/*/*/*.dot",
-             "wsj1/trans/wsj1/*/*/*.dot",
+             "wsj1/wsj1/trans/wsj1/*/*/*.dot",
              "wsj0/si_et_20/*/*.dot"]
 ALLOWED = set("abcdefghijklmnopqrstuvwxyz.' -")
 REPLACE = {
@@ -51,12 +51,17 @@ def load_text(wsj_base):
     return transcripts
 
 def load_waves(wsj_base, files):
+    # AP: adjusted for wsj1 paths, relative paths in .ndx file are off by one wsj1/ folder
     waves = []
     for f in files:
         flist = os.path.join(wsj_base, f)
         with open(flist, 'r') as fid:
-            lines = (l.split(":")[1].strip().strip("/")
-                     for l in fid if l[0] != ';')
+            if 'wsj1' in f:
+                lines = ('wsj1/'+l.split(":")[1].strip().strip("/")
+                         for l in fid if l[0] != ';')
+            else:
+                lines = (l.split(":")[1].strip().strip("/")
+                         for l in fid if l[0] != ';')
             lines = (os.path.join(wsj_base, l) for l in lines)
             # Replace wv1 with wav
             lines = (os.path.splitext(l)[0] + ".wav" for l in lines)
