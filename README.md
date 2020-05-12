@@ -16,7 +16,7 @@ The software has only been tested in Python3.6.
 NOTE: You will require Cuda version 7, 8, or 9.
 
 We recommend creating a conda virtual environment as was advised for the assignments and installing the python
-requirements there. Refer to the install-python-requirements.md for this part.
+requirements there. Refer to the [install-python-requirements.md](https://github.com/ankitapasad/speech/blob/master/install-python-requirements.md) for this part.
 
 After all the python requirements are installed, from the top level directory,
 run:
@@ -45,7 +45,7 @@ pytest
 
 ## Torch installation for CTC package
 
-Follow the instructions in install-torch.md to install and test the torch requirements for the CTC package.
+Follow the instructions in [install-torch.md](https://github.com/ankitapasad/speech/blob/master/install-torch.md) to install and test the torch requirements for the CTC package.
 
 ## Run 
 
