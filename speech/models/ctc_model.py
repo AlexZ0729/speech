@@ -40,6 +40,9 @@ class CTC(model.Model):
         return loss
 
     def collate(self, inputs, labels):
+        if len(inputs) == 1:
+            inputs = inputs[0]
+            labels = labels[0]
         max_t = max(i.shape[0] for i in inputs)
         max_t = self.conv_out_size(max_t, 0)
         x_lens = torch.IntTensor([max_t] * len(inputs))
@@ -49,7 +52,7 @@ class CTC(model.Model):
         batch = [x, y, x_lens, y_lens]
         if self.volatile:
             for v in batch:
-                v.volatile = True
+                v.requires_grad = True
         return batch
 
     def infer(self, batch):
