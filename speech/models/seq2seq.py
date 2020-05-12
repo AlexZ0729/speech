@@ -227,6 +227,9 @@ class Seq2Seq(model.Model):
         return [hyp]
 
     def collate(self, inputs, labels):
+        if len(inputs) == 1:
+            inputs = inputs[0]
+            labels = labels[0]
         inputs = model.zero_pad_concat(inputs)
         labels = end_pad_concat(labels)
         inputs = torch.from_numpy(inputs)
