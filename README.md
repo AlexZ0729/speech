@@ -1,9 +1,8 @@
 # speech
 
-[Test] Speech is an open-source package to build end-to-end models for automatic
-speech recognition. Sequence-to-sequence models with attention,
-Connectionist Temporal Classification and the RNN Sequence Transducer
-are currently supported.
+Speech is an open-source package to build end-to-end models for automatic
+speech recognition. Sequence-to-sequence models with attention and
+Connectionist Temporal Classification are currently supported.
 
 The goal of this software is to facilitate research in end-to-end models for
 speech recognition. The models are implemented in PyTorch.
@@ -14,17 +13,10 @@ The software has only been tested in Python3.6.
 
 ## Install
 
-We recommend creating a virtual environment and installing the python
-requirements there.
+NOTE: You will require Cuda version 7, 8, or 9.
 
-```
-virtualenv <path_to_your_env>
-source <path_to_your_env>/bin/activate
-pip install -r requirements.txt
-```
-
-Then follow the installation instructions for a version of
-[PyTorch](http://pytorch.org/) which works for your machine.
+We recommend creating a conda virtual environment as was advised for the assignments and installing the python
+requirements there. Refer to the install-python-requirements.md for this part.
 
 After all the python requirements are installed, from the top level directory,
 run:
@@ -50,6 +42,10 @@ tests from the `tests` directory.
 cd tests
 pytest
 ```
+
+## Torch installation for CTC package
+
+Follow the instructions in install-torch.md to install and test the torch requirements for the CTC package.
 
 ## Run 
 
