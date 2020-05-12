@@ -1,10 +1,10 @@
 {
     "seed" : 2017,
-    "save_path" : "examples/wsj/models/nn_logt_drop0.2_sample0.4",
+    "save_path" : "examples/wsj/models/seq2seq",
 
     "data" : {
         "train_set" : "examples/wsj/data/train_si284.json",
-        "dev_set" : "examples/wsj/data/test_dev93.json",
+        "dev_set" : "examples/wsj/data/dev_93.json",
         "start_and_end" : true
     },
 
