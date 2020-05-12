@@ -16,11 +16,11 @@ Fix an issue with newer cuda installs and torch
 Install  
 `cd ~/torch; ./install.sh` (don't update bashrc when it asks at the end)
 
-Activate torch env vars and warp-ctc vars
-```
-cd /share/data/speech/Data/ttic31110/course_project/speech
-source setup.sh
-```
+Activate torch env vars and warp-ctc vars   
+`. ~/torch/install/bin/torch-activate`
+
+Change to the repo directory  
+`source setup.sh`
 
 Build warp-ctc   
 `cd libs/warp-ctc`
