@@ -29,7 +29,7 @@ def run_epoch(model, optimizer, train_ldr, it, avg_loss):
         loss = model.loss(batch)
         loss.backward()
 
-        grad_norm = nn.utils.clip_grad_norm(model.parameters(), 200)
+        grad_norm = nn.utils.clip_grad_norm_(model.parameters(), 200)
         loss = loss.item()
 
         optimizer.step()
