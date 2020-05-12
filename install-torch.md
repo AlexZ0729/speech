@@ -16,19 +16,21 @@ Fix an issue with newer cuda installs and torch
 Install  
 `cd ~/torch; ./install.sh` (don't update bashrc when it asks at the end)
 
-# activate torch env vars and warp-ctc vars
-. ~/torch/install/bin/torch-activate (you should look at this file)
+Activate torch env vars and warp-ctc vars
+```
 cd /share/data/speech/Data/ttic31110/course_project/speech
 source setup.sh
+```
 
-# build warp-ctc
-cd libs/warp-ctc
-# fresh build (so cmake finds torch)
+Build warp-ctc
+`cd libs/warp-ctc`
+
+Fresh build (so cmake finds torch)
+```
 rm -rf build && mkdir build && cd build
 cmake ..
 make
+```
 
 # test
-(ta_31110_awni) [ankitap@gpu1 build]$ ./test_gpu
-Running GPU tests
-Tests pass
+./test_gpu
