@@ -1,0 +1,32 @@
+pl{
+    "seed" : 2017,
+    "save_path" : "/examples/librispeech/models/ctc_best",
+
+    "data" : {
+        "train_set" : "/examples/librispeech/data/train-clean-100.json",
+        "dev_set" : "/examples/librispeech/data/dev-clean.json"
+    },
+
+    "optimizer" : {
+        "batch_size" : 16,
+        "epochs" : 70,
+        "learning_rate" : 1e-3,
+        "momentum" : 0.0
+    },
+
+    "model" : {
+        "class" : "CTC",
+        "dropout" : 0.4,
+        "encoder" : {
+            "conv" : [
+                [32, 5, 8, 2],
+                [32, 5, 8, 2]
+            ],
+            "rnn" : {
+                "dim" : 256,
+                "bidirectional" : true,
+                "layers" : 4
+            }
+        }
+    }
+}
