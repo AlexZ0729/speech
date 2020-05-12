@@ -1,10 +1,10 @@
 {
     "seed" : 2017,
-    "save_path" : "/examples/librispeech/models/ctc_best",
+    "save_path" : "examples/librispeech/models/ctc_best",
 
     "data" : {
-        "train_set" : "/examples/librispeech/data/train-clean-100.json",
-        "dev_set" : "/examples/librispeech/data/dev-clean.json",
+        "train_set" : "examples/librispeech/data/train-clean-100.json",
+        "dev_set" : "examples/librispeech/data/dev-clean.json",
         "start_and_end" : false
     },
 
