@@ -30,7 +30,7 @@ def run_epoch(model, optimizer, train_ldr, it, avg_loss):
         loss.backward()
 
         grad_norm = nn.utils.clip_grad_norm(model.parameters(), 200)
-        loss = loss.data[0]
+        loss = loss.item()
 
         optimizer.step()
         prev_end_t = end_t
@@ -54,11 +54,12 @@ def eval_dev(model, ldr, preproc):
     model.set_eval()
 
     for batch in tqdm.tqdm(ldr):
-        preds = model.infer(batch)
-        loss = model.loss(batch)
-        losses.append(loss.data[0])
+        dev_input, dev_labels = list(batch)
+        preds = model.infer(zip((dev_input, dev_labels)))
+        loss = model.loss(zip((dev_input, dev_labels)))
+        losses.append(loss.item())
         all_preds.extend(preds)
-        all_labels.extend(batch[1])
+        all_labels.extend(dev_labels)
 
     model.set_train()
 
