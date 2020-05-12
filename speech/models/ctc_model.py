@@ -50,9 +50,9 @@ class CTC(model.Model):
         y_lens = torch.IntTensor([len(l) for l in labels])
         y = torch.IntTensor([l for label in labels for l in label])
         batch = [x, y, x_lens, y_lens]
-        if self.volatile:
-            for v in batch:
-                v.requires_grad = True
+        # if self.volatile:
+        #     for v in batch:
+        #         v.requires_grad = True
         return batch
 
     def infer(self, batch):
