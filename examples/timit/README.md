@@ -4,7 +4,7 @@ standard recipe, the map used here is taken from the [Kaldi TIMIT recipe].
 
 ## Setup
 #### For the purpose of TTIC 31110...
-You can find the **preprocessed** TIMIT data partitions and the corresponding jsons stored on slurm at 
+You can find the **preprocessed** TIMIT data partitions and the corresponding jsons stored on the TTIC slurm cluster at 
 ```
 /share/data/lang/users/ttic_31110/Datasets/timit
 ```
