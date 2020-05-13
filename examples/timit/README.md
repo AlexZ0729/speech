@@ -3,8 +3,8 @@ evaluation the 48 phonemes are again mapped to 39. The phoneme mapping is the
 standard recipe, the map used here is taken from the [Kaldi TIMIT recipe].
 
 ## Setup
-#### If using the TTIC slurm cluster...
-You can find the **preprocessed** TIMIT data partitions and the corresponding jsons stored at 
+#### For the purpose of TTIC 31110...
+You can find the **preprocessed** TIMIT data partitions and the corresponding jsons stored on slurm at 
 ```
 /share/data/lang/users/ttic_31110/Datasets/timit
 ```
