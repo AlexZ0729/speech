@@ -73,3 +73,7 @@ directory. Each example dataset should have instructions and/or scripts for
 downloading and preparing the data. There should also be one or more model
 configurations available. The results for each configuration will documented in
 each examples corresponding `README.md`.
+
+## Acknowledgement
+
+This repo is forked from [Awni Hannun's Speech repo](https://github.com/awni/speech), with some minor changes/edits on top.
