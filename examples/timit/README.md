@@ -1,6 +1,3 @@
-The Timit Speech corpus must be purchased from the LDC to run these
-experiments. The catalog number is [LDC93S1].
-
 The data is mapped from 61 to 48 phonemes for training. For final test set
 evaluation the 48 phonemes are again mapped to 39. The phoneme mapping is the
 standard recipe, the map used here is taken from the [Kaldi TIMIT recipe].
@@ -11,6 +8,7 @@ You can find the **preprocessed** TIMIT data partitions and the corresponding js
 ```
 /share/data/lang/users/ttic_31110/Datasets/timit
 ```
+Or alternatively they can also be found here (ToDo: add link)
 
 #### Otherwise, once downloaded, prepare the data
 
