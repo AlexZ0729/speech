@@ -18,6 +18,8 @@ You can find the **preprocessed** WSJ data partitions and the corresponding json
 ```
 Or alternatively the dataset can also be found [here](https://forms.gle/EGuaYYW72bzs4KbK8)
 
+NOTE: you will have to modify the paths in the data jsons accordingly.
+
 #### Otherwise, once downloaded, prepare the data
 ```
 ./preprocess.sh <path_to_wsj> <path_to_save_data_jsons>
