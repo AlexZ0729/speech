@@ -8,7 +8,7 @@ You can find the **preprocessed** TIMIT data partitions and the corresponding js
 ```
 /share/data/lang/users/ttic_31110/Datasets/timit
 ```
-Or alternatively they can also be found [here](https://forms.gle/EGuaYYW72bzs4KbK8)
+Or alternatively the dataset can also be found [here](https://forms.gle/EGuaYYW72bzs4KbK8)
 
 #### Otherwise, once downloaded, prepare the data
 
