@@ -16,7 +16,7 @@ You can find the **preprocessed** WSJ data partitions and the corresponding json
 ```
 /share/data/lang/users/ttic_31110/Datasets/wsj
 ```
-Or alternatively they can also be downloaded from here (ToDo: add link)
+Or alternatively the dataset can also be found [here](https://forms.gle/EGuaYYW72bzs4KbK8)
 
 #### Otherwise, once downloaded, prepare the data
 ```
