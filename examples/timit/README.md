@@ -10,6 +10,8 @@ You can find the **preprocessed** TIMIT data partitions and the corresponding js
 ```
 Or alternatively the dataset can also be found [here](https://forms.gle/EGuaYYW72bzs4KbK8)
 
+NOTE: you will have to modify the paths in the data jsons accordingly.
+
 #### Otherwise, once downloaded, prepare the data
 
 ```
