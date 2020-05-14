@@ -70,7 +70,8 @@ python {train, eval}.py -h
 
 For examples of model configurations and datasets, visit the examples
 directory. Each example dataset should have instructions and/or scripts for
-downloading and preparing the data. There should also be one or more model
+downloading and preparing the data. For the purposes of TTIC 31110, you can use 
+the dataset links provided. There should also be one or more model
 configurations available. The results for each configuration will documented in
 each examples corresponding `README.md`.
 
