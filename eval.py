@@ -12,9 +12,10 @@ import speech.loader as loader
 def eval_loop(model, ldr):
     all_preds = []; all_labels = []
     for batch in tqdm.tqdm(ldr):
-        preds = model.infer(batch)
+        input, labels = list(batch)
+        preds = model.infer(zip((input, labels)))
         all_preds.extend(preds)
-        all_labels.extend(batch[1])
+        all_labels.extend(labels)
     return list(zip(all_labels, all_preds))
 
 def run(model_path, dataset_json,
